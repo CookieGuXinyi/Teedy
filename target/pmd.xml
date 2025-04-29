@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd" version="6.46.0" timestamp="2025-04-22T17:33:21.920">
+<file name="/mnt/d/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/GroupDao.java">
+<violation beginline="162" endline="223" begincolumn="12" endcolumn="5" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.core.dao" class="GroupDao" method="findByCriteria" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'findByCriteria(GroupCriteria, SortCriteria)' has a cyclomatic complexity of 11.
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/criteria/DocumentCriteria.java">
+<violation beginline="13" endline="198" begincolumn="8" endcolumn="1" rule="DataClass" ruleset="Design" package="com.sismics.docs.core.dao.criteria" class="DocumentCriteria" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#dataclass" priority="3">
+The class 'DocumentCriteria' is suspected to be a Data Class (WOC=0.000%, NOPA=0, NOAM=27, WMC=27)
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/dto/AclDto.java">
+<violation beginline="10" endline="88" begincolumn="8" endcolumn="1" rule="DataClass" ruleset="Design" package="com.sismics.docs.core.dao.dto" class="AclDto" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#dataclass" priority="3">
+The class 'AclDto' is suspected to be a Data Class (WOC=0.000%, NOPA=0, NOAM=12, WMC=12)
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/dto/AuditLogDto.java">
+<violation beginline="10" endline="101" begincolumn="8" endcolumn="1" rule="DataClass" ruleset="Design" package="com.sismics.docs.core.dao.dto" class="AuditLogDto" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#dataclass" priority="3">
+The class 'AuditLogDto' is suspected to be a Data Class (WOC=0.000%, NOPA=0, NOAM=14, WMC=14)
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/dto/CommentDto.java">
+<violation beginline="8" endline="73" begincolumn="8" endcolumn="1" rule="DataClass" ruleset="Design" package="com.sismics.docs.core.dao.dto" class="CommentDto" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#dataclass" priority="3">
+The class 'CommentDto' is suspected to be a Data Class (WOC=0.000%, NOPA=0, NOAM=10, WMC=10)
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/dto/ContributorDto.java">
+<violation beginline="8" endline="34" begincolumn="8" endcolumn="1" rule="DataClass" ruleset="Design" package="com.sismics.docs.core.dao.dto" class="ContributorDto" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#dataclass" priority="3">
+The class 'ContributorDto' is suspected to be a Data Class (WOC=0.000%, NOPA=0, NOAM=4, WMC=4)
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/dto/DocumentDto.java">
+<violation beginline="8" endline="284" begincolumn="8" endcolumn="1" rule="DataClass" ruleset="Design" package="com.sismics.docs.core.dao.dto" class="DocumentDto" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#dataclass" priority="3">
+The class 'DocumentDto' is suspected to be a Data Class (WOC=7.143%, NOPA=0, NOAM=39, WMC=42)
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/dto/RelationDto.java">
+<violation beginline="8" endline="47" begincolumn="8" endcolumn="1" rule="DataClass" ruleset="Design" package="com.sismics.docs.core.dao.dto" class="RelationDto" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#dataclass" priority="3">
+The class 'RelationDto' is suspected to be a Data Class (WOC=0.000%, NOPA=0, NOAM=6, WMC=6)
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/dto/UserDto.java">
+<violation beginline="10" endline="124" begincolumn="8" endcolumn="1" rule="DataClass" ruleset="Design" package="com.sismics.docs.core.dao.dto" class="UserDto" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#dataclass" priority="3">
+The class 'UserDto' is suspected to be a Data Class (WOC=11.765%, NOPA=0, NOAM=15, WMC=17)
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/event/FileDeletedAsyncEvent.java">
+<violation beginline="10" endline="41" begincolumn="8" endcolumn="1" rule="DataClass" ruleset="Design" package="com.sismics.docs.core.event" class="FileDeletedAsyncEvent" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#dataclass" priority="3">
+The class 'FileDeletedAsyncEvent' is suspected to be a Data Class (WOC=20.000%, NOPA=0, NOAM=4, WMC=5)
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/event/FileEvent.java">
+<violation beginline="12" endline="60" begincolumn="17" endcolumn="1" rule="DataClass" ruleset="Design" package="com.sismics.docs.core.event" class="FileEvent" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#dataclass" priority="3">
+The class 'FileEvent' is suspected to be a Data Class (WOC=28.571%, NOPA=0, NOAM=5, WMC=7)
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/event/PasswordLostEvent.java">
+<violation beginline="12" endline="46" begincolumn="8" endcolumn="1" rule="DataClass" ruleset="Design" package="com.sismics.docs.core.event" class="PasswordLostEvent" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#dataclass" priority="3">
+The class 'PasswordLostEvent' is suspected to be a Data Class (WOC=20.000%, NOPA=0, NOAM=4, WMC=5)
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/model/jpa/Acl.java">
+<violation beginline="17" endline="122" begincolumn="8" endcolumn="1" rule="DataClass" ruleset="Design" package="com.sismics.docs.core.model.jpa" class="Acl" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#dataclass" priority="3">
+The class 'Acl' is suspected to be a Data Class (WOC=21.429%, NOPA=0, NOAM=11, WMC=14)
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/model/jpa/AuditLog.java">
+<violation beginline="22" endline="132" begincolumn="8" endcolumn="1" rule="DataClass" ruleset="Design" package="com.sismics.docs.core.model.jpa" class="AuditLog" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#dataclass" priority="3">
+The class 'AuditLog' is suspected to be a Data Class (WOC=6.667%, NOPA=0, NOAM=14, WMC=15)
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/model/jpa/Comment.java">
+<violation beginline="19" endline="119" begincolumn="8" endcolumn="1" rule="DataClass" ruleset="Design" package="com.sismics.docs.core.model.jpa" class="Comment" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#dataclass" priority="3">
+The class 'Comment' is suspected to be a Data Class (WOC=14.286%, NOPA=0, NOAM=12, WMC=14)
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/model/jpa/Config.java">
+<violation beginline="20" endline="57" begincolumn="8" endcolumn="1" rule="DataClass" ruleset="Design" package="com.sismics.docs.core.model.jpa" class="Config" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#dataclass" priority="3">
+The class 'Config' is suspected to be a Data Class (WOC=20.000%, NOPA=0, NOAM=4, WMC=5)
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/model/jpa/Contributor.java">
+<violation beginline="17" endline="69" begincolumn="8" endcolumn="1" rule="DataClass" ruleset="Design" package="com.sismics.docs.core.model.jpa" class="Contributor" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#dataclass" priority="3">
+The class 'Contributor' is suspected to be a Data Class (WOC=14.286%, NOPA=0, NOAM=6, WMC=7)
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/model/jpa/Document.java">
+<violation beginline="18" endline="271" begincolumn="8" endcolumn="1" rule="DataClass" ruleset="Design" package="com.sismics.docs.core.model.jpa" class="Document" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#dataclass" priority="3">
+The class 'Document' is suspected to be a Data Class (WOC=8.333%, NOPA=0, NOAM=33, WMC=36)
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/model/jpa/DocumentTag.java">
+<violation beginline="20" endline="91" begincolumn="8" endcolumn="1" rule="DataClass" ruleset="Design" package="com.sismics.docs.core.model.jpa" class="DocumentTag" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#dataclass" priority="3">
+The class 'DocumentTag' is suspected to be a Data Class (WOC=11.111%, NOPA=0, NOAM=8, WMC=9)
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/model/jpa/File.java">
+<violation beginline="17" endline="253" begincolumn="8" endcolumn="1" rule="DataClass" ruleset="Design" package="com.sismics.docs.core.model.jpa" class="File" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#dataclass" priority="3">
+The class 'File' is suspected to be a Data Class (WOC=25.806%, NOPA=1, NOAM=23, WMC=33)
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/model/jpa/PasswordRecovery.java">
+<violation beginline="18" endline="82" begincolumn="8" endcolumn="1" rule="DataClass" ruleset="Design" package="com.sismics.docs.core.model.jpa" class="PasswordRecovery" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#dataclass" priority="3">
+The class 'PasswordRecovery' is suspected to be a Data Class (WOC=11.111%, NOPA=0, NOAM=8, WMC=9)
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/model/jpa/Relation.java">
+<violation beginline="19" endline="85" begincolumn="8" endcolumn="1" rule="DataClass" ruleset="Design" package="com.sismics.docs.core.model.jpa" class="Relation" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#dataclass" priority="3">
+The class 'Relation' is suspected to be a Data Class (WOC=11.111%, NOPA=0, NOAM=8, WMC=9)
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/model/jpa/Role.java">
+<violation beginline="19" endline="84" begincolumn="8" endcolumn="1" rule="DataClass" ruleset="Design" package="com.sismics.docs.core.model.jpa" class="Role" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#dataclass" priority="3">
+The class 'Role' is suspected to be a Data Class (WOC=11.111%, NOPA=0, NOAM=8, WMC=9)
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/model/jpa/RoleBaseFunction.java">
+<violation beginline="19" endline="99" begincolumn="8" endcolumn="1" rule="DataClass" ruleset="Design" package="com.sismics.docs.core.model.jpa" class="RoleBaseFunction" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#dataclass" priority="3">
+The class 'RoleBaseFunction' is suspected to be a Data Class (WOC=9.091%, NOPA=0, NOAM=10, WMC=11)
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/model/jpa/Share.java">
+<violation beginline="20" endline="81" begincolumn="8" endcolumn="1" rule="DataClass" ruleset="Design" package="com.sismics.docs.core.model.jpa" class="Share" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#dataclass" priority="3">
+The class 'Share' is suspected to be a Data Class (WOC=11.111%, NOPA=0, NOAM=8, WMC=9)
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/model/jpa/Tag.java">
+<violation beginline="19" endline="133" begincolumn="8" endcolumn="1" rule="DataClass" ruleset="Design" package="com.sismics.docs.core.model.jpa" class="Tag" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#dataclass" priority="3">
+The class 'Tag' is suspected to be a Data Class (WOC=12.500%, NOPA=0, NOAM=14, WMC=16)
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/model/jpa/UserGroup.java">
+<violation beginline="20" endline="91" begincolumn="8" endcolumn="1" rule="DataClass" ruleset="Design" package="com.sismics.docs.core.model.jpa" class="UserGroup" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#dataclass" priority="3">
+The class 'UserGroup' is suspected to be a Data Class (WOC=11.111%, NOPA=0, NOAM=8, WMC=9)
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/model/jpa/Vocabulary.java">
+<violation beginline="17" endline="84" begincolumn="8" endcolumn="1" rule="DataClass" ruleset="Design" package="com.sismics.docs.core.model.jpa" class="Vocabulary" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#dataclass" priority="3">
+The class 'Vocabulary' is suspected to be a Data Class (WOC=11.111%, NOPA=0, NOAM=8, WMC=9)
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/service/InboxService.java">
+<violation beginline="193" endline="269" begincolumn="13" endcolumn="5" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.core.service" class="InboxService" method="importMessage" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'importMessage(Message, Map)' has a cyclomatic complexity of 12.
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/DirectoryUtil.java">
+<violation beginline="23" endline="51" begincolumn="19" endcolumn="5" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.core.util" class="DirectoryUtil" method="getBaseDataDirectory" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'getBaseDataDirectory()' has a cyclomatic complexity of 10.
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/FileUtil.java">
+<violation beginline="120" endline="216" begincolumn="19" endcolumn="5" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.core.util" class="FileUtil" method="createFile" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'createFile(String, String, Path, long, String, String, String)' has a cyclomatic complexity of 15.
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/MetadataUtil.java">
+<violation beginline="33" endline="84" begincolumn="19" endcolumn="5" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.core.util" class="MetadataUtil" method="updateMetadata" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'updateMetadata(String, List, List)' has a cyclomatic complexity of 14.
+</violation>
+<violation beginline="93" endline="120" begincolumn="20" endcolumn="5" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.core.util" class="MetadataUtil" method="validateValue" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'validateValue(MetadataType, String)' has a cyclomatic complexity of 12.
+</violation>
+<violation beginline="158" endline="195" begincolumn="19" endcolumn="5" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.core.util" class="MetadataUtil" method="addMetadata" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'addMetadata(JsonObjectBuilder, String)' has a cyclomatic complexity of 10.
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/PdfUtil.java">
+<violation beginline="52" endline="119" begincolumn="19" endcolumn="5" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.core.util" class="PdfUtil" method="convertToPdf" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'convertToPdf(DocumentDto, List, boolean, boolean, int, OutputStream)' has a cyclomatic complexity of 12.
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/TransactionUtil.java">
+<violation beginline="27" endline="86" begincolumn="19" endcolumn="5" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.core.util" class="TransactionUtil" method="handle" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'handle(Runnable)' has a cyclomatic complexity of 13.
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/indexing/IndexingHandler.java">
+<violation beginline="18" endline="120" begincolumn="34" endcolumn="1" rule="TooManyMethods" ruleset="Design" package="com.sismics.docs.core.util.indexing" class="IndexingHandler" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#toomanymethods" priority="3">
+This class has too many methods, consider refactoring it.
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/indexing/LuceneIndexingHandler.java">
+<violation beginline="74" endline="624" begincolumn="8" endcolumn="1" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.core.util.indexing" class="LuceneIndexingHandler" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The class 'LuceneIndexingHandler' has a total cyclomatic complexity of 86 (highest 24).
+</violation>
+<violation beginline="74" endline="624" begincolumn="63" endcolumn="1" rule="TooManyMethods" ruleset="Design" package="com.sismics.docs.core.util.indexing" class="LuceneIndexingHandler" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#toomanymethods" priority="3">
+This class has too many methods, consider refactoring it.
+</violation>
+<violation beginline="252" endline="386" begincolumn="12" endcolumn="5" rule="NcssCount" ruleset="Design" package="com.sismics.docs.core.util.indexing" class="LuceneIndexingHandler" method="findByCriteria" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#ncsscount" priority="3">
+The method 'findByCriteria(PaginatedList, List, DocumentCriteria, SortCriteria)' has a NCSS line count of 100.
+</violation>
+<violation beginline="252" endline="386" begincolumn="12" endcolumn="5" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.core.util.indexing" class="LuceneIndexingHandler" method="findByCriteria" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'findByCriteria(PaginatedList, List, DocumentCriteria, SortCriteria)' has a cyclomatic complexity of 24.
+</violation>
+<violation beginline="501" endline="535" begincolumn="13" endcolumn="5" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.core.util.indexing" class="LuceneIndexingHandler" method="getDocumentFromDocument" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'getDocumentFromDocument(Document)' has a cyclomatic complexity of 10.
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/jpa/PaginatedList.java">
+<violation beginline="10" endline="95" begincolumn="8" endcolumn="1" rule="DataClass" ruleset="Design" package="com.sismics.docs.core.util.jpa" class="PaginatedList" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#dataclass" priority="3">
+The class 'PaginatedList' is suspected to be a Data Class (WOC=0.000%, NOPA=0, NOAM=6, WMC=7)
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-core/src/main/java/com/sismics/util/EmailUtil.java">
+<violation beginline="83" endline="169" begincolumn="20" endcolumn="5" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.util" class="EmailUtil" method="sendEmail" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'sendEmail(String, UserDto, String, Map)' has a cyclomatic complexity of 13.
+</violation>
+<violation beginline="193" endline="233" begincolumn="19" endcolumn="5" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.util" class="EmailUtil" method="parseMailContent" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'parseMailContent(Part, MailContent)' has a cyclomatic complexity of 10.
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-core/src/main/java/com/sismics/util/ResourceUtil.java">
+<violation beginline="34" endline="89" begincolumn="19" endcolumn="5" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.util" class="ResourceUtil" method="list" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'list(Class, String, FilenameFilter)' has a cyclomatic complexity of 14.
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-core/src/main/java/com/sismics/util/jpa/DbOpenHelper.java">
+<violation beginline="56" endline="125" begincolumn="12" endcolumn="5" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.util.jpa" class="DbOpenHelper" method="open" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'open()' has a cyclomatic complexity of 11.
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-core/src/main/java/com/sismics/util/log4j/LogEntry.java">
+<violation beginline="10" endline="61" begincolumn="8" endcolumn="1" rule="DataClass" ruleset="Design" package="com.sismics.util.log4j" class="LogEntry" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#dataclass" priority="3">
+The class 'LogEntry' is suspected to be a Data Class (WOC=0.000%, NOPA=0, NOAM=4, WMC=5)
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-core/src/main/java/com/sismics/util/log4j/MemoryAppender.java">
+<violation beginline="101" endline="128" begincolumn="12" endcolumn="5" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.util.log4j" class="MemoryAppender" method="find" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'find(LogCriteria, PaginatedList)' has a cyclomatic complexity of 10.
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-core/src/main/java/com/sismics/util/mime/MimeTypeUtil.java">
+<violation beginline="42" endline="69" begincolumn="19" endcolumn="5" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.util.mime" class="MimeTypeUtil" method="getFileExtension" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'getFileExtension(String)' has a cyclomatic complexity of 12.
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-core/src/main/java/com/sismics/util/totp/GoogleAuthenticator.java">
+<violation beginline="76" endline="443" begincolumn="40" endcolumn="1" rule="TooManyMethods" ruleset="Design" package="com.sismics.util.totp" class="GoogleAuthenticator" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#toomanymethods" priority="3">
+This class has too many methods, consider refactoring it.
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-core/src/main/java/com/sismics/util/totp/GoogleAuthenticatorConfig.java">
+<violation beginline="35" endline="149" begincolumn="8" endcolumn="1" rule="DataClass" ruleset="Design" package="com.sismics.util.totp" class="GoogleAuthenticatorConfig" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#dataclass" priority="3">
+The class 'GoogleAuthenticatorConfig' is suspected to be a Data Class (WOC=0.000%, NOPA=0, NOAM=5, WMC=5)
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-web-common/src/main/java/com/sismics/rest/util/ValidationUtil.java">
+<violation beginline="17" endline="224" begincolumn="29" endcolumn="1" rule="TooManyMethods" ruleset="Design" package="com.sismics.rest.util" class="ValidationUtil" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#toomanymethods" priority="3">
+This class has too many methods, consider refactoring it.
+</violation>
+<violation beginline="50" endline="65" begincolumn="19" endcolumn="5" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.rest.util" class="ValidationUtil" method="validateLength" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'validateLength(String, String, Integer, Integer, boolean)' has a cyclomatic complexity of 11.
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-web-common/src/main/java/com/sismics/security/UserPrincipal.java">
+<violation beginline="13" endline="117" begincolumn="8" endcolumn="1" rule="DataClass" ruleset="Design" package="com.sismics.security" class="UserPrincipal" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#dataclass" priority="3">
+The class 'UserPrincipal' is suspected to be a Data Class (WOC=13.333%, NOPA=0, NOAM=12, WMC=15)
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-web-common/src/main/java/com/sismics/util/filter/RequestContextFilter.java">
+<violation beginline="74" endline="142" begincolumn="12" endcolumn="5" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.util.filter" class="RequestContextFilter" method="doFilter" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'doFilter(ServletRequest, ServletResponse, FilterChain)' has a cyclomatic complexity of 17.
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/resource/AclResource.java">
+<violation beginline="146" endline="194" begincolumn="12" endcolumn="5" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="AclResource" method="delete" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'delete(String, String, String)' has a cyclomatic complexity of 11.
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/resource/AppResource.java">
+<violation beginline="54" endline="888" begincolumn="8" endcolumn="1" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="AppResource" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The class 'AppResource' has a total cyclomatic complexity of 87 (highest 12).
+</violation>
+<violation beginline="54" endline="888" begincolumn="47" endcolumn="1" rule="TooManyMethods" ruleset="Design" package="com.sismics.docs.rest.resource" class="AppResource" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#toomanymethods" priority="3">
+This class has too many methods, consider refactoring it.
+</violation>
+<violation beginline="224" endline="272" begincolumn="12" endcolumn="5" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="AppResource" method="getConfigSmtp" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'getConfigSmtp()' has a cyclomatic complexity of 12.
+</violation>
+<violation beginline="354" endline="421" begincolumn="12" endcolumn="5" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="AppResource" method="getConfigInbox" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'getConfigInbox()' has a cyclomatic complexity of 10.
+</violation>
+<violation beginline="454" endline="502" begincolumn="12" endcolumn="5" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="AppResource" method="configInbox" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'configInbox(Boolean, Boolean, Boolean, String, String, Boolean, String, String, String, String)' has a cyclomatic complexity of 10.
+</violation>
+<violation beginline="651" endline="751" begincolumn="12" endcolumn="5" rule="NcssCount" ruleset="Design" package="com.sismics.docs.rest.resource" class="AppResource" method="batchCleanStorage" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#ncsscount" priority="3">
+The method 'batchCleanStorage()' has a NCSS line count of 71.
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/resource/DocumentResource.java">
+<violation beginline="98" endline="1100" begincolumn="8" endcolumn="1" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="DocumentResource" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The class 'DocumentResource' has a total cyclomatic complexity of 84 (highest 14).
+</violation>
+<violation beginline="177" endline="287" begincolumn="12" endcolumn="5" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="DocumentResource" method="get" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'get(String, String, Boolean)' has a cyclomatic complexity of 13.
+</violation>
+<violation beginline="429" endline="546" begincolumn="12" endcolumn="5" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="DocumentResource" method="list" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'list(Integer, Integer, Integer, Boolean, String, Boolean, String, String, String, String, String, String, Boolean, String, String, String, String, String, String, String)' has a cyclomatic complexity of 11.
+</violation>
+<violation beginline="781" endline="875" begincolumn="12" endcolumn="5" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="DocumentResource" method="update" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'update(String, String, String, String, String, String, String, String, String, String, String, List, List, List, List, String, String)' has a cyclomatic complexity of 13.
+</violation>
+<violation beginline="899" endline="972" begincolumn="12" endcolumn="5" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="DocumentResource" method="importEml" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'importEml(FormDataBodyPart)' has a cyclomatic complexity of 14.
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/resource/FileResource.java">
+<violation beginline="61" endline="812" begincolumn="8" endcolumn="1" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="FileResource" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The class 'FileResource' has a total cyclomatic complexity of 87 (highest 14).
+</violation>
+<violation beginline="61" endline="812" begincolumn="48" endcolumn="1" rule="TooManyMethods" ruleset="Design" package="com.sismics.docs.rest.resource" class="FileResource" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#toomanymethods" priority="3">
+This class has too many methods, consider refactoring it.
+</violation>
+<violation beginline="92" endline="143" begincolumn="12" endcolumn="5" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="FileResource" method="add" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'add(String, String, FormDataBodyPart)' has a cyclomatic complexity of 14.
+</violation>
+<violation beginline="166" endline="223" begincolumn="12" endcolumn="5" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="FileResource" method="attach" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'attach(String, String)' has a cyclomatic complexity of 10.
+</violation>
+<violation beginline="286" endline="326" begincolumn="12" endcolumn="5" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="FileResource" method="process" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'process(String)' has a cyclomatic complexity of 10.
+</violation>
+<violation beginline="568" endline="652" begincolumn="12" endcolumn="5" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="FileResource" method="data" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'data(String, String, String)' has a cyclomatic complexity of 11.
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/resource/GroupResource.java">
+<violation beginline="119" endline="170" begincolumn="12" endcolumn="5" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="GroupResource" method="update" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'update(String, String, String)' has a cyclomatic complexity of 14.
+</violation>
+<violation beginline="190" endline="225" begincolumn="12" endcolumn="5" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="GroupResource" method="delete" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'delete(String)' has a cyclomatic complexity of 10.
+</violation>
+<violation beginline="248" endline="294" begincolumn="12" endcolumn="5" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="GroupResource" method="addMember" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'addMember(String, String)' has a cyclomatic complexity of 10.
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/resource/RouteModelResource.java">
+<violation beginline="141" endline="261" begincolumn="13" endcolumn="5" rule="NcssCount" ruleset="Design" package="com.sismics.docs.rest.resource" class="RouteModelResource" method="validateRouteModelSteps" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#ncsscount" priority="3">
+The method 'validateRouteModelSteps(String)' has a NCSS line count of 76.
+</violation>
+<violation beginline="141" endline="261" begincolumn="13" endcolumn="5" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="RouteModelResource" method="validateRouteModelSteps" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'validateRouteModelSteps(String)' has a cyclomatic complexity of 38.
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/resource/RouteResource.java">
+<violation beginline="54" endline="130" begincolumn="12" endcolumn="5" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="RouteResource" method="start" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'start(String, String)' has a cyclomatic complexity of 15.
+</violation>
+<violation beginline="151" endline="224" begincolumn="12" endcolumn="5" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="RouteResource" method="validate" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'validate(String, String, String)' has a cyclomatic complexity of 21.
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/resource/TagResource.java">
+<violation beginline="250" endline="305" begincolumn="12" endcolumn="5" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="TagResource" method="update" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'update(String, String, String, String)' has a cyclomatic complexity of 13.
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/resource/UserResource.java">
+<violation beginline="53" endline="1145" begincolumn="8" endcolumn="1" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="UserResource" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The class 'UserResource' has a total cyclomatic complexity of 133 (highest 15).
+</violation>
+<violation beginline="53" endline="1145" begincolumn="48" endcolumn="1" rule="TooManyMethods" ruleset="Design" package="com.sismics.docs.rest.resource" class="UserResource" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#toomanymethods" priority="3">
+This class has too many methods, consider refactoring it.
+</violation>
+<violation beginline="199" endline="257" begincolumn="12" endcolumn="5" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="UserResource" method="update" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'update(String, String, String, String, Boolean)' has a cyclomatic complexity of 15.
+</violation>
+<violation beginline="285" endline="347" begincolumn="12" endcolumn="5" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="UserResource" method="login" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'login(String, String, String, boolean)' has a cyclomatic complexity of 12.
+</violation>
+<violation beginline="468" endline="514" begincolumn="12" endcolumn="5" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="UserResource" method="delete" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'delete(String)' has a cyclomatic complexity of 11.
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/resource/VocabularyResource.java">
+<violation beginline="150" endline="196" begincolumn="12" endcolumn="5" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="VocabularyResource" method="update" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'update(String, String, String, String)' has a cyclomatic complexity of 10.
+</violation>
+</file>
+<file name="/mnt/d/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/util/DocumentSearchCriteriaUtil.java">
+<violation beginline="48" endline="115" begincolumn="19" endcolumn="5" rule="NcssCount" ruleset="Design" package="com.sismics.docs.rest.util" class="DocumentSearchCriteriaUtil" method="parseSearchQuery" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#ncsscount" priority="3">
+The method 'parseSearchQuery(String, List)' has a NCSS line count of 60.
+</violation>
+<violation beginline="48" endline="115" begincolumn="19" endcolumn="5" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.util" class="DocumentSearchCriteriaUtil" method="parseSearchQuery" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'parseSearchQuery(String, List)' has a cyclomatic complexity of 22.
+</violation>
+<violation beginline="138" endline="202" begincolumn="19" endcolumn="5" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.util" class="DocumentSearchCriteriaUtil" method="addHttpSearchParams" externalInfoUrl="https://pmd.github.io/pmd-6.46.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'addHttpSearchParams(DocumentCriteria, String, String, String, String, String, String, Boolean, String, String, String, String, String, String, String, List)' has a cyclomatic complexity of 18.
+</violation>
+</file>
+</pmd>
