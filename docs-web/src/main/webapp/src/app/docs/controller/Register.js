@@ -30,19 +30,35 @@ angular.module('docs').controller('Register', function(Restangular, $scope, $roo
             password: $scope.user.password,
             email: $scope.user.email
         }).then(function() {
+            // Clear the form immediately
+            $scope.user = {};
+            if ($scope.registerForm) {
+                $scope.registerForm.$setPristine();
+                $scope.registerForm.$setUntouched();
+            }
+            
             var title = $translate.instant('register.success_title');
             var msg = $translate.instant('register.success_message');
             var btns = [{result: 'ok', label: $translate.instant('ok'), cssClass: 'btn-primary'}];
+            
+            // Show success dialog and navigate
             $dialog.messageBox(title, msg, btns).then(function() {
-                console.log('Dialog confirmed, navigating to login...');
-                $scope.user = {}; // clean up all input
-                $state.go('login');
+                $state.go('login', {}, { location: 'replace' });
             });
         }, function(data) {
+            // Clear the form immediately
+            $scope.user = {};
+            if ($scope.registerForm) {
+                $scope.registerForm.$setPristine();
+                $scope.registerForm.$setUntouched();
+            }
+            
             var title = $translate.instant('register.error_title');
             var msg = $translate.instant('register.error_message');
             var btns = [{result: 'ok', label: $translate.instant('ok'), cssClass: 'btn-primary'}];
             $dialog.messageBox(title, msg, btns);
+        }).catch(function(error) {
+            console.error('Error: ', error);
         });
     };
 });
@@ -57,11 +73,14 @@ angular.module('docs').controller('Register', function(Restangular, $scope, $roo
  * 用户名：gxy2
  * 密码：88888888
  * 邮箱：gxy2@mail.com
+ * 
+ * 第三次尝试注册：
+ * 用户名：gxy3
+ * 密码：gxy333333
+ * 邮箱：gxy3@mail.com
+ * 
+ * 第四次尝试注册：
+ * 用户名：gxy4
+ * 密码：gxy444444
+ * 邮箱：gxy4@mail.com
  */
-
-// Error: 
-// jakarta.servlet.ServletException: 
-// jakarta.servlet.ServletException: 
-// org.hibernate.PropertyValueException: 
-// not-null property references a null or transient value : 
-// com.sismics.docs.core.model.jpa.User.storageQuota
