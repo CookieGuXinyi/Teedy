@@ -22,21 +22,29 @@ angular.module('docs').controller('Login', function(Restangular, $scope, $rootSc
   
   // Login
   $scope.login = function() {
-    User.login($scope.user).then(function() {
+    console.log('Attempting login with:', $scope.user);
+    
+    User.login($scope.user).then(function(response) {
+      console.log('Login successful:', response);
+      
       User.userInfo(true).then(function(data) {
+        console.log('User info retrieved:', data);
         $rootScope.userInfo = data;
       });
 
       if($stateParams.redirectState !== undefined && $stateParams.redirectParams !== undefined) {
         $state.go($stateParams.redirectState, JSON.parse($stateParams.redirectParams))
-          .catch(function() {
+          .catch(function(error) {
+            console.error('Redirect failed:', error);
             $state.go('document.default');
           });
       } else {
         $state.go('document.default');
       }
-    }, function(data) {
-      if (data.data.type === 'ValidationCodeRequired') {
+    }, function(error) {
+      console.error('Login failed:', error);
+      
+      if (error.data && error.data.type === 'ValidationCodeRequired') {
         // A TOTP validation code is required to login
         $scope.codeRequired = true;
       } else {

@@ -1,0 +1,16 @@
+<div class="row" ng-app="docs" ng-controller="Admin">
+  <div class="col-sm-12">
+    <h2>Register Requests</h2>
+    <div id="pendingRequests">
+      <h3>Pending Registration Requests ({{ pendingRequests.length }})</h3>
+      <ul id="requestsList">
+        <li ng-repeat="request in pendingRequests">
+          {{ request.username }} - {{ request.email }}
+          <button ng-click="approveRequest(request.username, true)">Approve</button>
+          <button ng-click="approveRequest(request.username, false)">Reject</button>
+        </li>
+      </ul>
+      <p ng-if="pendingRequests.length === 0">No pending requests.</p>
+    </div>
+  </div>
+</div>

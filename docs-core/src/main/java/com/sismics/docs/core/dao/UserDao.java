@@ -394,4 +394,32 @@ public class UserDao {
         query.setParameter("toDate", toDate.toDate());
         return ((Number) query.getSingleResult()).longValue();
     }
+
+    /**
+     * Checks if a user with the given username exists.
+     *
+     * @param username The username to check
+     * @return true if the user exists, false otherwise
+     */
+    public boolean existsByUsername(String username) {
+        EntityManager em = ThreadLocalContext.get().getEntityManager();
+        Query q = em.createQuery("select count(u) from User u where u.username = :username and u.deleteDate is null");
+        q.setParameter("username", username);
+        long count = (long) q.getSingleResult();
+        return count > 0;
+    }
+
+    /**
+     * Checks if a user with the given email exists.
+     *
+     * @param email The email to check
+     * @return true if the user exists, false otherwise
+     */
+    public boolean existsByEmail(String email) {
+        EntityManager em = ThreadLocalContext.get().getEntityManager();
+        Query q = em.createQuery("select count(u) from User u where u.email = :email and u.deleteDate is null");
+        q.setParameter("email", email);
+        long count = (long) q.getSingleResult();
+        return count > 0;
+    }
 }

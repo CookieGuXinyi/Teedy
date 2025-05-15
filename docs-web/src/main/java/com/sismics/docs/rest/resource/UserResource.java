@@ -122,6 +122,143 @@ public class UserResource extends BaseResource {
     }
 
     /**
+     * Request registration.
+     *
+     * @api {post} /user/request_registration Request registration
+     * @apiName PostUserRequestRegistration
+     * @apiGroup User
+     * @apiParam {String{3..50}} username Username
+     * @apiParam {String{8..50}} password Password
+     * @apiParam {String{1..100}} email E-mail
+     * @apiSuccess {String} status Status OK
+     * @apiError (client) ValidationError Validation error
+     * @apiPermission none
+     * @apiVersion 1.0.0
+     *
+     * @param username User's username
+     * @param password Password
+     * @param email E-Mail
+     * @return Response
+     */
+    @POST
+    @Path("request_registration")
+    public Response requestRegistration(
+        @FormParam("username") String username,
+        @FormParam("password") String password,
+        @FormParam("email") String email) {
+        // Validate the input data
+        username = ValidationUtil.validateLength(username, "username", 3, 50);
+        ValidationUtil.validateUsername(username, "username");
+        password = ValidationUtil.validateLength(password, "password", 8, 50);
+        email = ValidationUtil.validateLength(email, "email", 1, 100);
+        ValidationUtil.validateEmail(email, "email");
+
+        // Check if the username or email already exists
+        UserDao userDao = new UserDao();
+        if (userDao.existsByUsername(username)) {
+            throw new ClientException("AlreadyExistingUsername", "Username already in use");
+        }
+        if (userDao.existsByEmail(email)) {
+            throw new ClientException("AlreadyExistingEmail", "Email already in use");
+        }
+
+        // Store the registration request
+        RegistrationRequestDao registrationRequestDao = new RegistrationRequestDao();
+        registrationRequestDao.create(new RegistrationRequest(username, password, email));
+
+        // Always return OK
+        JsonObjectBuilder response = Json.createObjectBuilder()
+                .add("status", "ok")
+                .add("message", "Your registration request has been submitted. Please wait for admin approval.");
+        return Response.ok().entity(response.build()).build();
+    }
+
+    /**
+     * List pending registration requests.
+     *
+     * @api {get} /user/list_pending_requests List pending registration requests
+     * @apiName GetUserListPendingRequests
+     * @apiGroup User
+     * @apiSuccess {Object[]} requests List of pending registration requests
+     * @apiSuccess {String} requests.username Username
+     * @apiSuccess {String} requests.email E-mail
+     * @apiSuccess {Number} requests.create_date Create date (timestamp)
+     * @apiError (client) ForbiddenError Access denied
+     * @apiPermission admin
+     * @apiVersion 1.0.0
+     *
+     * @return Response
+     */
+    @GET
+    @Path("list_pending_requests")
+    public Response listPendingRequests() {
+        if (!authenticate()) {
+            throw new ForbiddenClientException();
+        }
+        checkBaseFunction(BaseFunction.ADMIN);
+
+        // Get the list of pending registration requests
+        RegistrationRequestDao registrationRequestDao = new RegistrationRequestDao();
+        List<RegistrationRequest> requests = registrationRequestDao.listPendingRequests();
+
+        // Build the response
+        JsonArrayBuilder requestsArray = Json.createArrayBuilder();
+        for (RegistrationRequest request : requests) {
+            requestsArray.add(Json.createObjectBuilder()
+                    .add("username", request.getUsername())
+                    .add("email", request.getEmail())
+                    .add("create_date", request.getCreateDate().getTime()));
+        }
+
+        JsonObjectBuilder response = Json.createObjectBuilder()
+                .add("requests", requestsArray);
+        return Response.ok().entity(response.build()).build();
+    }
+
+    /**
+     * Approve or reject a registration request.
+     *
+     * @api {post} /user/approve_registration Approve or reject a registration request
+     * @apiName PostUserApproveRegistration
+     * @apiGroup User
+     * @apiParam {String} username Username
+     * @apiParam {Boolean} approve True to approve, false to reject
+     * @apiSuccess {String} status Status OK
+     * @apiError (client) ForbiddenError Access denied
+     * @apiError (client) UserNotFound User not found
+     * @apiPermission admin
+     * @apiVersion 1.0.0
+     *
+     * @param username Username
+     * @param approve True to approve, false to reject
+     * @return Response
+     */
+    @POST
+    @Path("approve_registration")
+    public Response approveRegistration(
+        @FormParam("username") String username,
+        @FormParam("approve") Boolean approve) {
+        if (!authenticate()) {
+            throw new ForbiddenClientException();
+        }
+        checkBaseFunction(BaseFunction.ADMIN);
+
+        // Approve or reject the registration request
+        RegistrationRequestDao registrationRequestDao = new RegistrationRequestDao();
+        RegistrationRequest request = registrationRequestDao.getByUsername(username);
+        if (request == null) {
+            throw new ClientException("UserRequestNotFound", "The user request does not exist");
+        }
+
+        request.approveOrRejectRequest(username, approve, principal.getId());
+
+        // Always return OK
+        JsonObjectBuilder response = Json.createObjectBuilder()
+                .add("status", "ok");
+        return Response.ok().entity(response.build()).build();
+    }
+
+    /**
      * Updates the current user informations.
      *
      * @api {post} /user Update the current user

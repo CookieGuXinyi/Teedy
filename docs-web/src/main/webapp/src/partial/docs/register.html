@@ -1,0 +1,90 @@
+<style>
+  /* No navbar in registration screen */
+  .navbar {
+    display: none;
+  }
+
+  /* Absolute positionned footer on top of the registration background */
+  .footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: none;
+  }
+
+  @media screen and (min-width: 768px) {
+    .footer {
+      width: 50%;
+    }
+  }
+
+  /* Smaller links everywhere on registration */
+  a {
+    font-size: 90%;
+    color: #666;
+  }
+</style>
+<div class="row vertical-center">
+  <div class="col-sm-6 col-xs-12 register-box">
+    <div class="row">
+      <div class="col-lg-offset-4 col-lg-4 col-xs-offset-1 col-xs-10">
+        <img src="img/title.png" class="img-responsive" />
+
+        <form>
+          <div class="form-group">
+            <label class="sr-only" for="inputUsername">{{ 'register.username' | translate }}</label>
+            <input class="form-control" type="text" id="inputUsername" name="username"
+                   ng-attr-placeholder="{{ 'register.username' | translate }}" ng-model="user.username" />
+          </div>
+
+          <div class="form-group">
+            <label class="sr-only" for="inputPassword">{{ 'register.password' | translate }}</label>
+            <input class="form-control" type="password" id="inputPassword" name="password"
+                   ng-attr-placeholder="{{ 'register.password' | translate }}" ng-model="user.password" 
+                   required minlength="8"/>
+            <div class="error" ng-show="registerForm.password.$error.required && registerForm.password.$touched">
+                {{ 'register.password_required' | translate }}
+            </div>
+            <div class="error" ng-show="registerForm.password.$error.minlength && registerForm.password.$touched">
+                {{ 'register.password_length' | translate }}
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="sr-only" for="inputConfirmPassword">{{ 'register.password_confirm' | translate }}</label>
+            <input class="form-control" type="password" id="inputConfirmPassword" name="confirmPassword"
+                   ng-attr-placeholder="{{ 'register.password_confirm' | translate }}" ng-model="user.confirmPassword"
+                   required compare-to="user.password" />
+            <div class="error" ng-show="registerForm.confirmPassword.$error.required && registerForm.confirmPassword.$touched">
+                {{ 'register.confirm_password_required' | translate }}
+            </div>
+            <div class="error" ng-show="registerForm.confirmPassword.$error.compareTo && registerForm.confirmPassword.$touched">
+                {{ 'register.password_mismatch' | translate }}
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="sr-only" for="inputEmail">{{ 'register.email' | translate }}</label>
+            <input class="form-control" type="email" id="inputEmail" name="email"
+                   ng-attr-placeholder="{{ 'register.email' | translate }}" ng-model="user.email" />
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <button type="submit" class="btn btn-primary" ng-click="register()">
+                <span class="fas fa-check"></span> {{ 'register.submit' | translate }}
+              </button>
+            </div>
+          </div>
+
+          <a href="#/login">已有账号？点击登录</a>
+          <a href="#/admin">管理员？点击管理</a>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="login-img-container col-sm-6 hidden-xs"></div>
+</div>
