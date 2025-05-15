@@ -147,7 +147,7 @@
           <li ui-sref-active="{ active: 'user.**', active2: 'group.**' }">
             <a href="#/user"><span class="fas fa-user"></span> {{ 'index.nav_users_groups' | translate }}</a>
           </li>
-          <li ui-sref-active="{ active: 'admin.**' }">
+          <li ui-sref-active="{ active: 'admin.**' }" ng-show="userInfo.base_functions.indexOf('ADMIN') !== -1">
             <a ui-sref="admin"><span class="fas fa-cog"></span> Register Requests</a>
           </li>
         </ul>

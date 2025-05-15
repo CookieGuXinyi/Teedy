@@ -125,7 +125,7 @@ public class RegistrationRequest {
             user.setUsername(request.getUsername());
             user.setPassword(request.getPassword());
             user.setEmail(request.getEmail());
-            user.setStorageQuota(104857600L); // 设置默认配额 100MB（单位视你数据库定义）
+            user.setStorageQuota(104857600L); // 设置默认配额 100MB（单位视你数据库定义）, TODO:是否要改？？
             user.setOnboarding(true);
 
             UserDao userDao = new UserDao();

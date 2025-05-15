@@ -380,6 +380,15 @@ angular.module('docs',
           templateUrl: 'partial/docs/admin.html',
           controller: 'Admin'
         }
+      },
+      resolve: {
+        checkAdmin: function(User, $state) {
+          return User.userInfo().then(function(data) {
+            if (data.base_functions.indexOf('ADMIN') === -1) {
+              $state.go('document');
+            }
+          });
+        }
       }
     })
     .state('user', {
