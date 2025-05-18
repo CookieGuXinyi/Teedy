@@ -200,7 +200,8 @@
       "start": "開始翻譯",
       "progress_message": "正在翻譯文檔...",
       "error_message": "翻譯失敗",
-      "success_message": "翻譯成功"
+      "success_message": "翻譯成功",
+      "result_title": "翻譯結果："
     }
   },
   "file": {

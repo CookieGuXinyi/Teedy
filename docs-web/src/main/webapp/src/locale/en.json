@@ -219,7 +219,8 @@
       "start": "Start translation",
       "progress_message": "Translating document... This may take a few minutes.",
       "error_title": "Translation Error",
-      "error_message": "An error occurred while translating the document. Please try again later."
+      "error_message": "An error occurred while translating the document. Please try again later.",
+      "result_title": "Translation Result:"
     }
   },
   "file": {

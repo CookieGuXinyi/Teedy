@@ -170,7 +170,7 @@ angular.module('docs').controller('FileModalView', function ($uibModalInstance, 
     }).then(function (data) {
       console.log('翻译成功:', data);
       $scope.translating = false;
-      $scope.translatedContent = data.translatedContent;
+      $scope.translatedContent = data.translatedText;
     }).catch(function (error) {
       console.error('翻译失败:', error);
       $scope.translating = false;
