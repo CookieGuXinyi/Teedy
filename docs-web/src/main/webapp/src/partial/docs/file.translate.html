@@ -1,0 +1,41 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h4 class="modal-title">{{ 'document.translate.title' | translate }}</h4>
+  </div>
+  
+  <div class="modal-body">
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label class="col-sm-3 control-label">{{ 'document.translate.target_language' | translate }}</label>
+        <div class="col-sm-9">
+          <select class="form-control" ng-model="targetLanguage" ng-options="lang.key as lang.label for lang in acceptedLanguages">
+            <option value="">{{ 'document.translate.select_language' | translate }}</option>
+          </select>
+        </div>
+      </div>
+    </form>
+
+    <!-- Progress bar -->
+    <div class="progress" ng-show="translating">
+      <div class="progress-bar progress-bar-striped active" role="progressbar" 
+           ng-style="{ 'width': progress + '%' }">
+        {{ progress }}%
+      </div>
+    </div>
+    
+    <!-- Alert message -->
+    <div class="alert alert-info" ng-show="translating">
+      {{ 'document.translate.progress' | translate }}
+    </div>
+  </div>
+  
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" ng-click="$dismiss()" ng-disabled="translating">
+      {{ 'cancel' | translate }}
+    </button>
+    <button type="button" class="btn btn-primary" ng-click="startTranslation()" 
+            ng-disabled="!targetLanguage || translating">
+      {{ 'document.translate.start' | translate }}
+    </button>
+  </div>
+</div> 

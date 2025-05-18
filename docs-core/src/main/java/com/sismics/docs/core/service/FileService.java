@@ -1,6 +1,10 @@
 package com.sismics.docs.core.service;
 
 import com.google.common.util.concurrent.AbstractScheduledService;
+import com.sismics.docs.core.util.DirectoryUtil;
+import com.sismics.docs.core.model.jpa.File;
+import com.sismics.util.context.ThreadLocalContext;
+import jakarta.persistence.EntityManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -13,6 +17,9 @@ import java.nio.file.Paths;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
+import java.util.UUID;
+import java.util.Date;
+import java.nio.charset.StandardCharsets;
 
 /**
  * File service.
@@ -96,5 +103,61 @@ public class FileService extends AbstractScheduledService {
             super(referent, q);
             path = referent.toAbsolutePath().toString();
         }
+    }
+
+    /**
+     * Translate a file.
+     *
+     * @param fileId File ID
+     * @param sourceLanguage Source language code
+     * @param targetLanguage Target language code
+     * @return Translated file ID
+     */
+    public String translateFile(String fileId, String sourceLanguage, String targetLanguage) throws Exception {
+        EntityManager em = ThreadLocalContext.get().getEntityManager();
+        
+        // Get the file
+        File file = em.find(File.class, fileId);
+        if (file == null) {
+            throw new Exception("File not found");
+        }
+
+        // Create a new file for the translation
+        String translatedFileId = UUID.randomUUID().toString();
+        File translatedFile = new File();
+        translatedFile.setId(translatedFileId);
+        translatedFile.setName(file.getName() + " (" + targetLanguage + ")");
+        translatedFile.setMimeType(file.getMimeType());
+        translatedFile.setSize(file.getSize());
+        translatedFile.setDocumentId(file.getDocumentId());
+        translatedFile.setCreateDate(new Date());
+        translatedFile.setVersion(file.getVersion());
+        translatedFile.setVersionId(file.getVersionId());
+        translatedFile.setLatestVersion(true);
+        // Copy the file content
+        Path sourcePath = getFilePath(file);
+        Path targetPath = getFilePath(translatedFile);
+        Files.copy(sourcePath, targetPath);
+
+        // If it's a text file, translate its content
+        if (file.getMimeType().startsWith("text/")) {
+            String content = new String(Files.readAllBytes(sourcePath), StandardCharsets.UTF_8);
+            TranslationService translationService = new TranslationService();
+            String translatedContent = translationService.translateText(content, sourceLanguage, targetLanguage);
+            Files.write(targetPath, translatedContent.getBytes(StandardCharsets.UTF_8));
+        }
+
+        // Save the translated file
+        em.persist(translatedFile);
+
+        return translatedFileId;
+    }
+
+    /**
+     * Get file path.
+     */
+    private Path getFilePath(File file) {
+        // Assuming DirectoryUtil.getStorageDirectory() returns the base directory for file storage
+        return DirectoryUtil.getStorageDirectory().resolve(file.getId());
     }
 }

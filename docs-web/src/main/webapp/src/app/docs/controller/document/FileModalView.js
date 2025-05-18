@@ -3,7 +3,33 @@
 /**
  * File modal view controller.
  */
-angular.module('docs').controller('FileModalView', function ($uibModalInstance, $scope, $state, $stateParams, $sce, Restangular, $transitions) {
+angular.module('docs').controller('FileModalView', function ($uibModalInstance, $scope, $state, $stateParams, $sce, Restangular, $transitions, $uibModal, $dialog, $translate) {
+  console.log('FileModalView controller initialized');
+  console.log('File ID:', $stateParams.fileId);
+  
+  $scope.fileId = $stateParams.fileId;
+
+  // List of accepted languages
+  $scope.acceptedLanguages = [
+    { key: 'en', label: 'English' },
+    { key: 'fr', label: 'Français' },
+    { key: 'es', label: 'Español' },
+    { key: 'de', label: 'Deutsch' },
+    { key: 'it', label: 'Italiano' },
+    { key: 'pt', label: 'Português' },
+    { key: 'ru', label: 'Русский' },
+    { key: 'zh', label: '中文' },
+    { key: 'ja', label: '日本語' },
+    { key: 'ko', label: '한국어' }
+  ];
+
+  $scope.sourceLanguage = '';
+  $scope.targetLanguage = '';
+  $scope.showTranslationOptions = false;
+  $scope.translating = false;
+  $scope.progress = 0;
+  $scope.translatedContent = null;
+    
   var setFile = function (files) {
     // Search current file
     _.each(files, function (value) {
@@ -122,5 +148,32 @@ angular.module('docs').controller('FileModalView', function ($uibModalInstance, 
    */
   $scope.canDisplayPreview = function () {
     return $scope.file && $scope.file.mimetype !== 'application/pdf';
+  };
+
+  /**
+   * Select the source and target languages and translate the file.
+   */
+  $scope.translateNow = function () {
+    if (!$scope.sourceLanguage || !$scope.targetLanguage) {
+      console.warn('必须同时选择源语言和目标语言');
+      return;
+    }
+  
+    $scope.translating = true;
+    console.log('开始翻译，源语言:', $scope.sourceLanguage, '目标语言:', $scope.targetLanguage);
+  
+    Restangular.one('file/translate').get({
+      documentId: $stateParams.id,
+      sourceLanguage: $scope.sourceLanguage,
+      targetLanguage: $scope.targetLanguage,
+      fileId: $stateParams.fileId
+    }).then(function (data) {
+      console.log('翻译成功:', data);
+      $scope.translating = false;
+      $scope.translatedContent = data.translatedContent;
+    }).catch(function (error) {
+      console.error('翻译失败:', error);
+      $scope.translating = false;
+    });
   };
 });

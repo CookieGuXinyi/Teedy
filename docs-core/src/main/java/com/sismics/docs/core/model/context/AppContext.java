@@ -9,6 +9,7 @@ import com.sismics.docs.core.dao.UserDao;
 import com.sismics.docs.core.listener.async.*;
 import com.sismics.docs.core.model.jpa.User;
 import com.sismics.docs.core.service.FileService;
+import com.sismics.docs.core.service.TranslationService;
 import com.sismics.docs.core.service.FileSizeService;
 import com.sismics.docs.core.service.InboxService;
 import com.sismics.docs.core.util.PdfUtil;
@@ -67,6 +68,11 @@ public class AppContext {
     private FileService fileService;
 
     /**
+     * Translation service.
+     */
+    private TranslationService translationService;
+
+    /**
      * File size service.
      */
     private FileSizeService fileSizeService;
@@ -102,6 +108,11 @@ public class AppContext {
         fileService = new FileService();
         fileService.startAsync();
         fileService.awaitRunning();
+
+        // Start translation service
+        translationService = new TranslationService();
+        translationService.startAsync();
+        translationService.awaitRunning();
 
         // Start inbox service
         inboxService = new InboxService();
@@ -225,6 +236,10 @@ public class AppContext {
         return fileService;
     }
 
+    public TranslationService getTranslationService() {
+        return translationService;
+    }
+
     public void shutDown() {
         for (ExecutorService executor : asyncExecutorList) {
             // Shutdown executor, don't accept any more tasks (can cause error with nested events)
@@ -247,6 +262,10 @@ public class AppContext {
 
         if (fileService != null) {
             fileService.stopAsync();
+        }
+
+        if (translationService != null) {
+            translationService.stopAsync();
         }
 
         if (fileSizeService != null) {

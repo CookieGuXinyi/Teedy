@@ -31,6 +31,45 @@
     <button type="button" class="btn btn-default" uib-tooltip="Show text content" tooltip-append-to-body="true" ng-click="openFileContent()">
       <span class="fas fa-eye"></span>
     </button>
+    <button type="button" class="btn btn-default" uib-tooltip="{{ 'document.translate.title' | translate }}" tooltip-append-to-body="true" ng-click="showTranslationOptions = !showTranslationOptions">
+      <span class="fas fa-language"></span>
+    </button>
+  </div>
+  <!-- 翻译选项（显示/隐藏）-->
+  <div ng-show="showTranslationOptions" style="margin-top: 15px;">
+    <div class="form-inline d-flex align-items-center" style="gap: 10px; flex-wrap: wrap;">
+      <div class="form-group">
+        <label style="margin-right: 5px;">{{ 'document.translate.source_language' | translate }}</label>
+        <select class="form-control" ng-model="sourceLanguage" 
+                ng-options="lang.key as lang.label for lang in acceptedLanguages">
+          <option value="">{{ 'document.translate.select_language' | translate }}</option>
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <label style="margin-right: 5px;">{{ 'document.translate.target_language' | translate }}</label>
+        <select class="form-control" ng-model="targetLanguage" 
+                ng-options="lang.key as lang.label for lang in acceptedLanguages">
+          <option value="">{{ 'document.translate.select_language' | translate }}</option>
+        </select>
+      </div>
+  
+      <button class="btn btn-primary"
+              ng-click="translateNow()"
+              ng-disabled="!sourceLanguage || !targetLanguage || translating">
+        {{ 'document.translate.start' | translate }}
+      </button>
+    </div>
+  
+    <!-- 翻译中提示 -->
+    <div class="alert alert-info" ng-show="translating" style="margin-top: 10px;">
+      {{ 'document.translate.progress_message' | translate }}
+    </div>
+
+    <div ng-if="translatedContent" style="margin-top: 10px;">
+      <h3>翻译结果：</h3>
+      <pre>{{ translatedContent }}</pre>
+    </div>
   </div>
 </div>
 

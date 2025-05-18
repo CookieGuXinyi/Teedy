@@ -191,6 +191,16 @@
       "title": "共享文档",
       "message": "如果您想多次共享同一文档，请将共享命名.",
       "submit": "共享"
+    },
+    "translate": {
+      "title": "翻译文档",
+      "source_language": "源语言",
+      "target_language": "目标语言",
+      "select_language": "选择语言",
+      "start": "开始翻译",
+      "progress_message": "正在翻译文档...",
+      "error_message": "翻译失败",
+      "success_message": "翻译成功"
     }
   },
   "file": {

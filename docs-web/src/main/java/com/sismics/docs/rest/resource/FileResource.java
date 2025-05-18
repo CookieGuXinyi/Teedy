@@ -29,6 +29,8 @@ import com.sismics.util.context.ThreadLocalContext;
 import com.sismics.util.mime.MimeType;
 import org.glassfish.jersey.media.multipart.FormDataBodyPart;
 import org.glassfish.jersey.media.multipart.FormDataParam;
+import org.apache.poi.xwpf.usermodel.XWPFDocument;
+import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 
 import jakarta.json.Json;
 import jakarta.json.JsonArrayBuilder;
@@ -809,4 +811,110 @@ public class FileResource extends BaseResource {
             }
         }
     }
+
+    /**
+     * Translate a file.
+     *
+     * @param documentId Document ID
+     * @param sourceLanguage Source language code
+     * @param targetLanguage Target language code
+     * @param fileId File ID
+     * @return Translated file ID
+     */
+    @GET
+    @Path("translate")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response translateFile(
+            @QueryParam("documentId") String documentId,
+            @QueryParam("sourceLanguage") String sourceLanguage,
+            @QueryParam("targetLanguage") String targetLanguage,
+            @QueryParam("fileId") String fileId) {
+
+        if (!authenticate()) {
+            throw new ForbiddenClientException();
+        }
+
+        try {
+            // 加载文件及解密
+            File file = findFile(fileId, null);
+            java.nio.file.Path storedFile = DirectoryUtil.getStorageDirectory().resolve(fileId);
+            User user = new UserDao().getById(file.getUserId());
+
+            InputStream fileInputStream;
+            try {
+                fileInputStream = Files.newInputStream(storedFile);
+            } catch (IOException e) {
+                throw new ServerException("TranslationError", "Error when reading stored file", e);
+            }
+
+            InputStream decryptedInputStream;
+            try {
+                decryptedInputStream = EncryptionUtil.decryptInputStream(fileInputStream, user.getPrivateKey());
+            } catch (Exception e) {
+                throw new ServerException("TranslationError", "Error when decrypting file", e);
+            }
+
+            String fileContent;
+            try {
+                XWPFDocument docx = new XWPFDocument(decryptedInputStream);
+                StringBuilder sb = new StringBuilder();
+                for (XWPFParagraph paragraph : docx.getParagraphs()) {
+                    sb.append(paragraph.getText()).append("\n");
+                }
+                fileContent = sb.toString();
+            } catch (Exception e) {
+                throw new ServerException("TranslationError", "Error when reading file content", e);
+            }
+
+            // 翻译文件内容
+            String translatedContent;
+            try {
+                translatedContent = AppContext.getInstance().getTranslationService().translateText(fileContent, sourceLanguage, targetLanguage);
+            } catch (Exception e) {
+                throw new ServerException("TranslationError", "Error when translating file", e);
+            }
+
+            // 返回翻译结果（可换成文件保存）
+            return Response.ok(Json.createObjectBuilder()
+                    .add("translatedText", translatedContent)
+                    .build()).build();
+
+        } catch (ServerException se) {
+            throw se;
+        } catch (Exception e) {
+            throw new ServerException("TranslationError", "Error translating file", e);
+        }
+    }
+
+
+    /**
+     * Translate a file.
+     *
+     * @param documentId Document ID
+     * @param sourceLanguage Source language code
+     * @param targetLanguage Target language code
+     * @param fileId File ID
+     * @return Translated file ID
+     */
+    // @POST
+    // @Path("{documentId: [a-z0-9\\-]+}/translate")
+    // public Response translateFile(
+    //         @PathParam("documentId") String documentId,
+    //         @FormParam("sourceLanguage") String sourceLanguage,
+    //         @FormParam("targetLanguage") String targetLanguage,
+    //         @FormParam("fileId") String fileId) {
+    //     if (!authenticate()) {
+    //         throw new ForbiddenClientException();
+    //     }
+
+    //     try {
+    //         String translatedFileId = AppContext.getInstance().getFileService().translateFile(fileId, sourceLanguage, targetLanguage);
+    //         return Response.ok().entity(Json.createObjectBuilder()
+    //                 .add("id", translatedFileId)
+    //                 .build())
+    //                 .build();
+    //     } catch (Exception e) {
+    //         throw new ServerException("TranslationError", "Error translating file", e);
+    //     }
+    // }
 }

@@ -16,6 +16,20 @@
     "password_lost_error_title": "Password reset error",
     "password_lost_error_message": "Unable to send a password reset email, please contact your administrator for a manual reset"
   },
+  "register": {
+    "username": "Username",
+    "password": "Password",
+    "password_confirm": "Confirm password",
+    "password_required": "Password is required",
+    "password_mismatch": "Passwords do not match",
+    "confirm_password_required": "Confirm password is required",
+    "email": "Email",
+    "submit": "Register",
+    "error_title": "Registration failed",
+    "error_message": "Registration failed",
+    "success_title": "Registration successful",
+    "success_message": "Registration successful! Please wait for administrator approval"
+  },
   "passwordlost": {
     "title": "Password lost",
     "message": "Please enter your username to receive a password reset link. If you don't remember your username, please contact your administrator",
@@ -196,6 +210,16 @@
       "title": "Share document",
       "message": "Name the sharing if you want to share multiple times the same document.",
       "submit": "Share"
+    },
+    "translate": {
+      "title": "Translate Document",
+      "source_language": "Source Language",
+      "target_language": "Target Language",
+      "select_language": "Select a language",
+      "start": "Start translation",
+      "progress_message": "Translating document... This may take a few minutes.",
+      "error_title": "Translation Error",
+      "error_message": "An error occurred while translating the document. Please try again later."
     }
   },
   "file": {

@@ -16,6 +16,20 @@
     "password_lost_error_title": "密碼重置錯誤",
     "password_lost_error_message": "無法發送密碼重置電子郵件，請聯繫您的管理員進行手動重置"
   },
+  "register": {
+    "username": "用戶名",
+    "password": "密碼",
+    "password_confirm": "確認密碼",
+    "password_required": "密碼不能為空",
+    "password_mismatch": "密碼不匹配",
+    "confirm_password_required": "確認密碼不能為空",
+    "email": "郵箱",
+    "submit": "註冊",
+    "error_title": "註冊失敗",
+    "error_message": "註冊失敗",
+    "success_title": "註冊成功",
+    "success_message": "註冊成功！請等待管理員審核"
+  },
   "passwordlost": {
     "title": "密碼丟失",
     "message": "請輸入您的用戶名以接收密碼重置鏈接。 如果您不記得您的用戶名，請聯繫您的管理員",
@@ -177,6 +191,16 @@
       "title": "共享文檔",
       "message": "如果您想多次共享同一文檔，請將共享命名.",
       "submit": "共享"
+    },
+    "translate": {
+      "title": "翻譯文檔",
+      "source_language": "源語言",
+      "target_language": "目標語言",
+      "select_language": "選擇語言", 
+      "start": "開始翻譯",
+      "progress_message": "正在翻譯文檔...",
+      "error_message": "翻譯失敗",
+      "success_message": "翻譯成功"
     }
   },
   "file": {
