@@ -31,6 +31,8 @@ import org.glassfish.jersey.media.multipart.FormDataBodyPart;
 import org.glassfish.jersey.media.multipart.FormDataParam;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.text.PDFTextStripper;
 
 import jakarta.json.Json;
 import jakarta.json.JsonArrayBuilder;
@@ -43,6 +45,8 @@ import jakarta.ws.rs.core.Response.Status;
 import jakarta.ws.rs.core.StreamingOutput;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.net.URISyntaxException;
 import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
@@ -51,6 +55,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.text.MessageFormat;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
@@ -856,12 +861,24 @@ public class FileResource extends BaseResource {
 
             String fileContent;
             try {
-                XWPFDocument docx = new XWPFDocument(decryptedInputStream);
-                StringBuilder sb = new StringBuilder();
-                for (XWPFParagraph paragraph : docx.getParagraphs()) {
-                    sb.append(paragraph.getText()).append("\n");
+                String fileName = file.getName().toLowerCase();
+                if (fileName.endsWith(".docx")) {
+                    XWPFDocument docx = new XWPFDocument(decryptedInputStream);
+                    StringBuilder sb = new StringBuilder();
+                    for (XWPFParagraph paragraph : docx.getParagraphs()) {
+                        sb.append(paragraph.getText()).append("\n");
+                    }
+                    fileContent = sb.toString();
+                } else if (fileName.endsWith(".pdf")) {
+                    PDDocument pdf = PDDocument.load(decryptedInputStream);
+                    PDFTextStripper stripper = new PDFTextStripper();
+                    fileContent = stripper.getText(pdf);
+                    pdf.close();
+                } else if (fileName.endsWith(".txt")) {
+                    fileContent = new BufferedReader(new InputStreamReader(decryptedInputStream)).lines().collect(Collectors.joining("\n"));
+                } else {
+                    fileContent = "Cannot Solve this file type";
                 }
-                fileContent = sb.toString();
             } catch (Exception e) {
                 throw new ServerException("TranslationError", "Error when reading file content", e);
             }
